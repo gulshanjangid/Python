@@ -51,3 +51,63 @@ class Child(Mother, Father):
 child = Child()
 
 child.show()
+
+
+
+
+# Diamond Problem in Python
+
+# The Diamond Problem happens in multiple inheritance when a child class gets the same method from two parent classes.
+
+
+# The inheritance structure looks like a diamond:
+
+#         A
+#        / \
+#       B   C
+#        \ /
+#         D
+
+# Here, D inherits from both B and C, and both B and C inherit from A.
+# Interview answer:
+
+# The Diamond Problem occurs in multiple inheritance when a class inherits from two classes that have a common parent. Python solves this using MRO (Method Resolution Order) and the C3 linearization algorithm.
+
+class A:
+    def show(self):
+        print("A")
+
+
+class B(A):
+    def show(self):
+        print("B")
+
+
+class C(A):
+    def show(self):
+        print("C")
+
+
+class D(B, C):
+    pass
+
+
+obj = D()
+obj.show()
+
+
+
+
+# Diamond Problem
+#       ↓
+# Multiple Inheritance
+#       ↓
+# Same method exists in multiple classes
+#       ↓
+# Python uses MRO
+#       ↓
+# MRO decides which method runs
+
+
+
+
