@@ -6,3 +6,21 @@
 # You don't directly change the balance.
 # You use methods like deposit() and withdraw().
 # The methods control what is allowed.
+
+class Student:
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def show(self):
+        print("Name:", self.name)
+        print("Marks:", self.marks)
+
+
+student = Student("Gulshan", 85)
+
+student.show()
+
+
+
